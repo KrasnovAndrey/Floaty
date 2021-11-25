@@ -460,6 +460,7 @@ open class Floaty: UIView {
     }
     
     circleLayer.backgroundColor = self.selectedColor != nil ? self.selectedColor?.cgColor : self.buttonColor.cgColor
+    plusLayer.strokeColor = plusColor.cgColor
     
     fabDelegate?.floatyOpened?(self)
     closed = false
@@ -518,6 +519,7 @@ open class Floaty: UIView {
     }
     
     circleLayer.backgroundColor = self.buttonColor.cgColor
+    plusLayer.strokeColor = plusColor.cgColor
     
     fabDelegate?.floatyClosed?(self)
     closed = true
