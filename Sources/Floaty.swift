@@ -688,6 +688,114 @@ open class Floaty: UIView {
     addItem(item: item)
     return item
   }
+
+  @discardableResult
+  @objc open func addItem(attributedText: NSAttributedString, titlePosition: FloatyItemLabelPositionType = .left) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.titleLabelPosition = titlePosition
+    item.attributedText = attributedText
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with title.
+   */
+  @discardableResult
+  @objc open func addItem(attributedText: NSAttributedString) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.attributedText = attributedText
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with title, titlePosition and icon.
+   titlePosition's default value is left.
+   */
+  @discardableResult
+  @objc open func addItem(_ attributedText: NSAttributedString, _ icon: UIImage?, titlePosition: FloatyItemLabelPositionType = .left) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.titleLabelPosition = titlePosition
+    item.attributedText = attributedText
+    item.icon = icon
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with title and icon.
+   */
+  @discardableResult
+  @objc open func addItem(_ attributedText: NSAttributedString, _ icon: UIImage?) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.attributedText = attributedText
+    item.icon = icon
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with title and handler.
+   */
+  @discardableResult
+  @objc open func addItem(attributedText: NSAttributedString, handler: @escaping ((FloatyItem) -> Void)) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.attributedText = attributedText
+    item.handler = handler
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with titlePosition and handler.
+   titlePosition's default value is left.
+   */
+  @discardableResult
+  @objc open func addItem(attributedText: NSAttributedString, titlePosition: FloatyItemLabelPositionType = .left, handler: @escaping ((FloatyItem) -> Void)) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.titleLabelPosition = titlePosition
+    item.attributedText = attributedText
+    item.handler = handler
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with title, icon or handler.
+   */
+  @discardableResult
+  @objc open func addItem(_ attributedText: NSAttributedString, _ icon: UIImage?, handler: @escaping ((FloatyItem) -> Void)) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.attributedText = attributedText
+    item.icon = icon
+    item.handler = handler
+    addItem(item: item)
+    return item
+  }
+
+  /**
+   Add item with title, icon, titlePosition or handler.
+   titlePosition's default value is left
+   */
+  @discardableResult
+  @objc open func addItem(_ attributedText: NSAttributedString, _ icon: UIImage?, titlePosition: FloatyItemLabelPositionType = .left, handler: @escaping ((FloatyItem) -> Void)) -> FloatyItem {
+    let item = FloatyItem()
+    itemDefaultSet(item)
+    item.titleLabelPosition = titlePosition
+    item.attributedText = attributedText
+    item.icon = icon
+    item.handler = handler
+    addItem(item: item)
+    return item
+  }
   
   /**
    Remove item.

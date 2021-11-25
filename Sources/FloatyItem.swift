@@ -151,6 +151,26 @@ open class FloatyItem: UIView {
       
     }
   }
+
+  @objc open var attributedText: NSAttributedString? = nil {
+    didSet {
+      titleLabel.attributedText = attributedText
+      titleLabel.sizeToFit()
+      if(titleLabelPosition == .left) {
+        titleLabel.frame.origin.x = -titleLabel.frame.size.width - 10
+      } else { //titleLabel will be on right
+        titleLabel.frame.origin.x = iconImageView.frame.origin.x + iconImageView.frame.size.width + 20
+      }
+
+      titleLabel.frame.origin.y = self.size/2-titleLabel.frame.size.height/2
+
+      if FloatyManager.defaultInstance().rtlMode {
+        titleLabel.transform = CGAffineTransform(scaleX: -1.0, y: 1.0);
+      }else {
+        titleLabel.transform = CGAffineTransform(scaleX: 1.0, y: 1.0);
+      }
+    }
+  }
   
   /**
    Item's icon image view.
