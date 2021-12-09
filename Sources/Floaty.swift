@@ -47,7 +47,7 @@ open class Floaty: UIView {
    */
   @objc open var size: CGFloat = 56 {
     didSet {
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
       self.recalculateItemsOrigin()
     }
   }
@@ -56,7 +56,7 @@ open class Floaty: UIView {
    */
   @objc open var circleAnimationRadius: Double = 150 {
     didSet {
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
     }
   }
   /**
@@ -65,7 +65,7 @@ open class Floaty: UIView {
   @objc open var circleAnimationDegreeOffset: Double = 0.0 {
     didSet {
       self.circleAnimationDegreeOffset = self.circleAnimationDegreeOffset * .pi / 180.0
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
     }
   }
   /**
@@ -73,12 +73,12 @@ open class Floaty: UIView {
    */
   @objc open var paddingX: CGFloat = 14 {
     didSet {
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
     }
   }
   @objc open var paddingY: CGFloat = 14 {
     didSet {
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
     }
   }
   
@@ -142,7 +142,7 @@ open class Floaty: UIView {
   @objc @IBInspectable
   open var buttonImage: UIImage? = nil {
     didSet {
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
     }
   }
   
@@ -174,7 +174,7 @@ open class Floaty: UIView {
         item.size = self.itemSize
       }
       self.recalculateItemsOrigin()
-      self.setNeedsDisplay()
+      self.setNeedsLayout()
     }
   }
   
@@ -267,7 +267,7 @@ open class Floaty: UIView {
   */
   @IBInspectable open var selectedColor: UIColor? = nil {
     didSet {
-        self.setNeedsDisplay()
+        self.setNeedsLayout()
     }
   }
     
